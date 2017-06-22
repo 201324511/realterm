@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <termios.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -59,6 +60,7 @@ void food_print(food *food1);
 int game_over(snake *snake1, snake_pos *pos1);
 void set_borders();
 void print_score(int*);
+int kbhit(void);
 
 
 
@@ -81,7 +83,7 @@ int main()
 
       system("clear");
       system("stty -echo");
-      //curs_set(0);                    // doesn't work for some reason
+      curs_set(0);                    // doesn't work for some reason
       snake_place(&snake1,&pos1);
       set_borders();
       food_print(&food1);
@@ -320,7 +322,7 @@ int game_over(snake *snake1, snake_pos *pos1)
     }
 
 
-    if ((snake1->head_X>=horizontal) || (snake1->head_X<=1) || (snake1->head_Y>=vertical) || (snake1->head_Y<=1))
+    if ((snake1->head_X>=(horizontal-15)) || (snake1->head_X<=1) || (snake1->head_Y>=(vertical-15)) || (snake1->head_Y<=1))
         {
             return 1;
         }
