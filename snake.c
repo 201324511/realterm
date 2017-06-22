@@ -13,7 +13,16 @@
 #define left 97
 #define right 100
 
+/**
+	@file snake.c
+*/
 
+
+/**
+	@typedef Snake
+	@brief attribute of snake
+	
+*/
 
 typedef struct Snake
 {
@@ -28,6 +37,11 @@ typedef struct Snake
 
 }snake;
 
+/**
+	@typedef snake_pos
+	@brief position of snake
+*/
+
 
 typedef struct snake_pos
 {
@@ -36,6 +50,10 @@ typedef struct snake_pos
 
 }snake_pos;
 
+/**
+	@typedef food
+	@brief symbol and position of food
+*/
 
 
 typedef struct food
@@ -132,7 +150,12 @@ int main()
 }
 
 
-
+/**
+	@fn snake_init
+	@param snake *snake1
+	@brief initial state of snake
+	
+*/
 
 void snake_init(snake *snake1)
 {
@@ -146,6 +169,11 @@ void snake_init(snake *snake1)
     snake1->head_Y=5;
 }
 
+/**
+	@fn snake_place
+	@param snake *snake1, snake_pos *pos1
+	@brief detail place of snake
+*/
 
 void snake_place(snake *snake1, snake_pos *pos1)
 {
@@ -160,6 +188,11 @@ void snake_place(snake *snake1, snake_pos *pos1)
     }
 
 }
+
+/**
+	@fn set_borders
+	@brief setting basic border
+*/
 
 void set_borders()
 {
@@ -181,6 +214,11 @@ void set_borders()
         }
 }
 
+/**
+	@fn snake_move
+	@param snake *snake1, snake_pos *pos1, food *food1, int *score
+	@brief direction of snake's move
+*/
 
 
 void snake_move(snake *snake1, snake_pos *pos1, food *food1, int *score)
@@ -201,7 +239,12 @@ void snake_move(snake *snake1, snake_pos *pos1, food *food1, int *score)
     }
 }
 
-
+/**
+	@fn move_tail
+	@param snake *snake1, snake_pos *pos1)
+	@brief position of snake's tail
+	
+*/
 
 void move_tail(snake *snake1, snake_pos *pos1)
 {
@@ -220,7 +263,12 @@ void move_tail(snake *snake1, snake_pos *pos1)
     }
 }
 
-
+/**
+	@fn move_head
+	@param snake *snake1, snake_pos *pos1
+	@brief direction of snake's head and following tail
+	
+*/
 
 void move_head(snake *snake1, snake_pos *pos1)
 {
@@ -279,6 +327,13 @@ void move_head(snake *snake1, snake_pos *pos1)
 }
 
 
+/**
+	@fn food_init
+	@param food *food1
+	@brief initial position and shape of food
+	
+*/
+
 
 void food_init(food *food1)
 {
@@ -287,6 +342,11 @@ void food_init(food *food1)
     food1->symbol='F';
 }
 
+/**
+	@fn food_print
+	@param food *food1
+	@brief printing a food randomly
+*/
 
 void food_print(food *food1)
 {
@@ -295,19 +355,36 @@ void food_print(food *food1)
 
 }
 
+/**
+	@fn gotoxy
+	@param int x , int y
+	@brief decide coordinate
+	
+*/
 
 void gotoxy(int x,int y)
 {
     printf("%c[%d;%df",0x1B,y,x);
 }
 
-
+/**
+	@fn pos_init
+	@param snake_pos *pos1
+	@brief initialize the position
+*/
 
 void pos_init(snake_pos *pos1)
 {
     memset(pos1, 0, sizeof(*pos1));
 }
 
+/**
+	@fn game_over
+	@param snake *snake1, snake_pos *pos1
+	@brief condition of game over
+	@return game over or not
+ 
+*/
 
 int game_over(snake *snake1, snake_pos *pos1)
 {
@@ -331,7 +408,10 @@ int game_over(snake *snake1, snake_pos *pos1)
     return 0;
 }
 
-
+/**
+	@fn kbhit
+	@brief adjust key input
+*/
 
 int kbhit(void)
 {
