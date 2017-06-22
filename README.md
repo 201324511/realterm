@@ -23,5 +23,9 @@ wasd키로 뱀을 움직여서 Food를 먹는다<br/>
 ![게임중화면](http://postfiles14.naver.net/MjAxNzA2MjJfMjM5/MDAxNDk4MTM3NjkyMzY2.PoYQam6iFpZ6pkTAGuikVJLNz9GHjD1FdlmPi4wwIiAg.jqgHWx8FbLHLZAQD0qLW5USl1t60Rj08CyfvpaTtCrIg.PNG.jwj6258/snake2.PNG?type=w3)
 ![게임종료](http://postfiles6.naver.net/MjAxNzA2MjJfOTQg/MDAxNDk4MTM3NjkyNDg4.lhjqRgfQJFlSAt804ItIUHt4UvWvGUdU5gAKkaQQTcog.5s9prDHrEW8riZzBViOBzFda7d-Yorhrv0VeXszQ0sog.PNG.jwj6258/snake3.PNG?type=w3)
 
+## 실행동영상
+[youtube link](https://www.youtube.com/watch?v=UOoMhNFA5W8)
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
