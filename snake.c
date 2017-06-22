@@ -195,8 +195,8 @@ void snake_move(snake *snake1, snake_pos *pos1, food *food1, int *score)
     {
         snake1->size++;
         *score=*score+1;
-        food1->X=rand()%(horizontal-5);
-        food1->Y=rand()%(vertical-5);
+        food1->X=rand()%(horizontal-100);
+        food1->Y=rand()%(vertical-15);
         food_print(food1);
     }
 }
@@ -282,8 +282,8 @@ void move_head(snake *snake1, snake_pos *pos1)
 
 void food_init(food *food1)
 {
-    food1->X=(rand()%(horizontal-5))+1;
-    food1->Y=(rand()%(vertical-5))+1;
+    food1->X=(rand()%(horizontal-100))+1;
+    food1->Y=(rand()%(vertical-20))+1;
     food1->symbol='F';
 }
 
@@ -322,7 +322,7 @@ int game_over(snake *snake1, snake_pos *pos1)
     }
 
 
-    if ((snake1->head_X>=(horizontal-15)) || (snake1->head_X<=1) || (snake1->head_Y>=(vertical-15)) || (snake1->head_Y<=1))
+    if ((snake1->head_X>=(horizontal-88)) || (snake1->head_X<=1) || (snake1->head_Y>=(vertical-15)) || (snake1->head_Y<=1))
         {
             return 1;
         }
